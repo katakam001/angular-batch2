@@ -7,7 +7,6 @@ import { Food } from './model/Food';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-batch2';
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak-5'},
     {value: 'pizza-1', viewValue: 'Pizza-6'},

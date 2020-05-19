@@ -1,1 +1,21 @@
-<p>item-component works!</p>
+     <!-- Interpolation binding (ts to html)-->
+     <!-- variable binding using interpolation-->
+     <p>Child Compoent started</p>
+     <p>{{title}}</p>
+     <!-- image binding using interpolation-->
+<img src="{{itemImageUrl}}">
+       <!-- computation using interpolation-->
+<p>The sum of 1 + 1 is {{1 + 1}}.</p>
+
+<!--property Binding-->
+     <!-- image binding using Property Binding-->
+<img [src]="itemImageUrl">
+<br/>
+     <!-- image binding using Property Binding-->
+     <mat-form-field >
+      <mat-label>First Name</mat-label>
+      <input [disabled]= "isUnchanged" matInput placeholder="Peter" >
+    </mat-form-field>
+
+<button [disabled]="isUnchanged" mat-raised-button color="primary">Primary</button>
+<p>child component ended</p>
