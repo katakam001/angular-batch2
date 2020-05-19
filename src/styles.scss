@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-
+$color:rgb(255, 0, 179);
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.color-form{
+  color: rgb(211, 208, 22);
+  background-color: $color;
+}
