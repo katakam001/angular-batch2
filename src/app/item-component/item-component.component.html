@@ -18,9 +18,23 @@
 <mat-form-field>
   <mat-label>First Name</mat-label>
   <!-- <input [disabled]="isUnchanged" matInput placeholder="Peter"> -->
-  <input (keyup)="onKey($event)" matInput placeholder="keyUp">
+  <!-- <input (keyup)="onKey($event)" matInput placeholder="keyUp"> -->
+  <input (keydown.tab)="tabout($event)" matInput placeholder="taboutkeydown">
 </mat-form-field>
-
+<mat-form-field>
+  <mat-label>First Name2</mat-label>
+  <input  matInput placeholder="normal input">
+</mat-form-field>
+<mat-form-field>
+  <mat-label>First Name1</mat-label>
+  <input (keyup.tab)="tabout1($event)" (keydown.tab)="tabout($event)" matInput placeholder="taboutkeyup">
+</mat-form-field>
+<br>
+<mat-radio-group aria-label="Select Gender">
+  <mat-radio-button [style.font-size]="amar" (change)="selected($event)" value="1">Male</mat-radio-button>
+  <mat-radio-button [style] = "styleExpr" (change)="unselected($event)" value="2">Female</mat-radio-button>
+</mat-radio-group>
+<br>
 <button [disabled]="isUnchanged" (click)="display()" mat-raised-button color="primary">Primary</button>
 <button  on-click="secondDisplay($event)" mat-raised-button color="primary">Secondary</button>
 <p>child component ended</p>
