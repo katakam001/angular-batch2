@@ -1,25 +1,26 @@
+<p>child component component start</p>
 <!-- Interpolation binding (ts to html)-->
 <!-- variable binding using interpolation-->
-<p>Child Compoent started</p>
-<p>{{title}}</p>
+<!-- <p>Child Compoent started</p> -->
+<!-- <p>{{title}}</p> -->
 <!-- image binding using interpolation-->
-<img src="{{itemImageUrl}}">
+<!-- <img src="{{itemImageUrl}}"> -->
 <!-- computation using interpolation-->
-<p>The sum of 1 + 1 is {{1 + 1}}.</p>
+<!-- <p>The sum of 1 + 1 is {{1 + 1}}.</p> -->
 
 <!--property Binding-->
 <!-- image binding using Property Binding-->
-<img [src]="itemImageUrl">
-<br>
+<!-- <img [src]="itemImageUrl">
+<br> -->
 <!-- Property Binding alternative syntax-->
-<img bind-src="itemImageUrl">
-<br />
+<!-- <img bind-src="itemImageUrl">
+<br /> -->
 <!-- image binding using Property Binding-->
-<mat-form-field>
-  <mat-label>First Name</mat-label>
+<!-- <mat-form-field>
+  <mat-label>First Name</mat-label> -->
   <!-- <input [disabled]="isUnchanged" matInput placeholder="Peter"> -->
   <!-- <input (keyup)="onKey($event)" matInput placeholder="keyUp"> -->
-  <input (keydown.tab)="tabout($event)" matInput placeholder="taboutkeydown">
+  <!-- <input (keydown.tab)="tabout($event)" matInput placeholder="taboutkeydown">
 </mat-form-field>
 <mat-form-field>
   <mat-label>First Name2</mat-label>
@@ -33,8 +34,23 @@
 <mat-radio-group aria-label="Select Gender">
   <mat-radio-button [style.font-size]="amar" (change)="selected($event)" value="1">Male</mat-radio-button>
   <mat-radio-button [style] = "styleExpr" (change)="unselected($event)" value="2">Female</mat-radio-button>
+  <mat-radio-button [class] = "classExpr" (change)="unselected($event)" value="3">None</mat-radio-button>
 </mat-radio-group>
 <br>
 <button [disabled]="isUnchanged" (click)="display()" mat-raised-button color="primary">Primary</button>
-<button  on-click="secondDisplay($event)" mat-raised-button color="primary">Secondary</button>
+<button  on-click="secondDisplay($event)" mat-raised-button color="primary">Secondary</button> -->
+<p>Two way Bindings</p>
+<!-- <p>Property Binding[](ts to html) and Event Binding()(html to ts)</p>
+<div>{{hello}}</div>
+  <mat-form-field>
+    <mat-label>Input</mat-label>
+      <input matInput [(ngModel)]="hello">
+  </mat-form-field> -->
+  <div>
+    <mat-checkbox [(ngModel)]="canSave" (change)="setCurrentStyles()">Is Normal</mat-checkbox>
+    <mat-checkbox [(ngModel)]="isUnchanged" (change)="setCurrentStyles()">is Bold</mat-checkbox>
+    <mat-checkbox [(ngModel)]="isSpecial" (change)="setCurrentStyles()">is 24px</mat-checkbox>
+  </div>
+
+<P [ngStyle]="currentStyles">Hello this is ng style</P>
 <p>child component ended</p>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SafeMethodCall } from '@angular/compiler';
 
 @Component({
   selector: 'app-item-component',
@@ -8,12 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class ItemComponentComponent implements OnInit {
   title = 'Create a Account2';
   itemImageUrl="../assets/images/Spring-Promo.jpg"
-  isUnchanged=false;
-  constructor() { }
+  currentStyles: {};
   keyUp:String;
   amar="xx-large";
   styleExpr="font-size:xx-large;color:red;"
+  classExpr="color-red-class position-right-class";
+  styleExpression={};
+  canSave=false;
+  isSpecial=false;
+  isUnchanged=false;
+  hello:string;//ng model
+  constructor() { }
   ngOnInit(): void {
+    this.setCurrentStyles();
   }
   display(){
     console.log("Button is pressed");
@@ -39,5 +47,17 @@ export class ItemComponentComponent implements OnInit {
   }
   unselected(event:any){
    alert(event.value);
+   this.styleExpr="font-size:small;color:blue";
+   this.classExpr="color-blue-class position-left-class";
   }
+  setCurrentStyles() {
+    // CSS styles: set per current state of component properties
+    this.currentStyles = {
+      'font-style': this.canSave ? 'italic' : 'normal',
+      'font-weight': this.isUnchanged ? 'bold' : 'normal',
+      'font-size': this.isSpecial ? '24px' : '12px',
+      'color':'red'
+    };
+  }
+
 }
