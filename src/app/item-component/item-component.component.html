@@ -39,18 +39,47 @@
 <br>
 <button [disabled]="isUnchanged" (click)="display()" mat-raised-button color="primary">Primary</button>
 <button  on-click="secondDisplay($event)" mat-raised-button color="primary">Secondary</button> -->
-<p>Two way Bindings</p>
+<!-- <p>Two way Bindings</p> -->
 <!-- <p>Property Binding[](ts to html) and Event Binding()(html to ts)</p>
+      <p>ng model - model binding - two way </p>
 <div>{{hello}}</div>
   <mat-form-field>
     <mat-label>Input</mat-label>
       <input matInput [(ngModel)]="hello">
   </mat-form-field> -->
-  <div>
+  <!--
+    <p>ng style - conditional styling </p>
+    <div>
     <mat-checkbox [(ngModel)]="canSave" (change)="setCurrentStyles()">Is Normal</mat-checkbox>
     <mat-checkbox [(ngModel)]="isUnchanged" (change)="setCurrentStyles()">is Bold</mat-checkbox>
     <mat-checkbox [(ngModel)]="isSpecial" (change)="setCurrentStyles()">is 24px</mat-checkbox>
   </div>
 
-<P [ngStyle]="currentStyles">Hello this is ng style</P>
+<P [ngStyle]="currentStyles">Hello this is ng style</P> -->
+<!-- <p>ng class - conditional class styling </p>
+
+<div>
+  <mat-checkbox [(ngModel)]="canSave" (change)="setCurrentClass()">Is Red Color and font size is large</mat-checkbox>
+  <mat-checkbox [(ngModel)]="isUnchanged" (change)="setCurrentClass()" >is position right</mat-checkbox>
+</div>
+<div [ngClass]="currentClasses">styling using ng class</div> -->
+<P>Built-in structural directives</P>
+<!-- <p>Condition if changes</p>
+<div>
+  <mat-checkbox [(ngModel)]="isDisplay" >Is Display</mat-checkbox>
+</div>
+
+<div *ngIf="isDisplay">Hello world</div>
+  <input matInput *ngIf="isDisplay"> -->
+  <ul>
+    <li *ngFor="let item of items">{{item}}</li>
+  </ul>
+  <mat-form-field>
+    <mat-label>Favorite food</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 <p>child component ended</p>
