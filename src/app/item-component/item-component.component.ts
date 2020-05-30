@@ -17,6 +17,8 @@ export class ItemComponentComponent implements OnInit {
   styleExpr="font-size:xx-large;color:red;"
   classExpr="color-red-class position-right-class";
   styleExpression={};
+  condition:number;
+  condition1:string;
   canSave=false;
   isSpecial=false;
   isUnchanged=false;
@@ -78,6 +80,9 @@ export class ItemComponentComponent implements OnInit {
     };
   }
   foodDisplay(value){
+    console.log(value);
+  }
+  onFoodSelection(value){
     console.log(value);
   }
 }
