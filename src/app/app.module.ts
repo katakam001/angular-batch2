@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import { ItemComponentComponent } from './item-component/item-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemComponentComponent
+    ItemComponentComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
-    FormsModule
+    FormsModule,//ng model
+    ReactiveFormsModule // form
   ],
   providers: [],
   bootstrap: [AppComponent]

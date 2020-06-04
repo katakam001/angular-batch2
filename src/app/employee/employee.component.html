@@ -1,0 +1,39 @@
+<form>
+  <div>
+  <mat-form-field>
+    <mat-label>
+      First Name
+    </mat-label>
+    <input matInput placeholder="Raj" [formControl]="firstName">
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field>
+    <mat-label>
+      Last Name
+    </mat-label>
+    <input matInput placeholder="katakam" [formControl]="lastName">
+  </mat-form-field>
+</div>
+  <button mat-raised-button color="primary"(click)="read()">Primary</button>
+  <button mat-raised-button style="float: right;" color="primary"(click)="reset()">Reset</button>
+  <p>{{display|json}}</p>
+</form>
+
+
+   <!-- <mat-form-field>
+    <mat-label>
+      First Name
+    </mat-label>
+    <input matInput placeholder="Raj" [(ngModel)]="name1">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      Last Name
+    </mat-label>
+    <input matInput placeholder="katakam" [(ngModel)]="name2">
+  </mat-form-field>
+  <button mat-raised-button color="primary"(click)="ngModelread()">Primary</button>
+  <p>{{ngModeldisplay|json}}</p> -->
+
+
