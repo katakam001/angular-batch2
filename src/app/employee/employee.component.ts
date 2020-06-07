@@ -17,7 +17,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   // firstName = new FormControl('');
-  firstName = new FormControl({ value: 'Hari', disabled: false },Validators.required);
+  firstName = new FormControl({ value: '', disabled: false },[Validators.required,Validators.maxLength(10),Validators.minLength(5)]);
   lastName = new FormControl({ value: 'Naren', disabled: true });
   read(){
    this.display={
